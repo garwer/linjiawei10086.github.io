@@ -112,33 +112,28 @@
     };
     var render = function render(res) {
       var ulTmpl = "";
+      console.log(res);
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          //改成自己
-          console.log('data==>>>>>>>>>',data);
-          var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/min_photos/' + data.link[i];
-          var src = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/photos/' + data.link[i];
-          var aaa = 'http://7xtc4k.com1.z0.glb.clouddn.com/min_photos/' + data.link[i];
-          var bbb = 'http://7xtc4k.com1.z0.glb.clouddn.com/photos/' + data.link[i];
-
-          console.log(minSrc);
-          console.log(src);
-          console.log(aaa);
-          console.log(bbb);
+          var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos/' + data.link[i];
+          console.log(minSrc)
+          //var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
+          //var src = 'http://litten.me/ins/' + data.link[i];
+          var src = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
-          src += '';
+          src += '.jpg';
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
+                <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/photos/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
             </figure>';
         }
-        ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '年<em>' + data.month + '月</em></h1>\
+        ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
         <ul class="img-box-ul">' + liTmpl + '</ul>\
         </section>';
       }
@@ -178,8 +173,8 @@
     function loadData(success) {
       if (!searchData) {
         var xhr = new XMLHttpRequest();
+      //  xhr.open('GET', './ins.json?t=' + +new Date(), true);
         xhr.open('GET', './data.json?t=' + +new Date(), true);
-
         xhr.onload = function() {
           if (this.status >= 200 && this.status < 300) {
             var res = JSON.parse(this.response);
