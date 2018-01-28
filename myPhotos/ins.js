@@ -120,8 +120,8 @@
           //github不知道为什么不生效
           //var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos/' + data.link[i];
           var minSrc = '../../min_photos/' + data.link[i];
-          var src = '../../max_photos/' + data.link[i];
-          console.log(minSrc)
+          var src = '../../photos/' + data.link[i];
+          //console.log(minSrc)
           //var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
           //var src = 'http://litten.me/ins/' + data.link[i];
           //var src = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos' + data.link[i];
@@ -129,10 +129,10 @@
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           //src += '.jpg';
-          console.log(src);
+          //console.log(src);
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                 <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
-                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/photos/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/myPhotos/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
             </figure>';
