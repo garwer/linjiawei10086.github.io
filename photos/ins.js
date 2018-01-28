@@ -117,12 +117,15 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos/' + data.link[i];
+          //github不知道为什么不生效
+          //var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos/' + data.link[i];
+          var minSrc = '../../min_photos/' + data.link[i];
+          var src = '../../max_photos/' + data.link[i];
           console.log(minSrc)
           //var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
           //var src = 'http://litten.me/ins/' + data.link[i];
           //var src = 'https://github.com/linjiawei10086/my-blog-photo/blob/master/min_photos' + data.link[i];
-          var src = 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike60%2C5%2C5%2C60%2C20/sign=3d317346a18b87d6444fa34d6661435d/7aec54e736d12f2e37156f174fc2d562853568b1.jpg';
+          //var src = 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike60%2C5%2C5%2C60%2C20/sign=3d317346a18b87d6444fa34d6661435d/7aec54e736d12f2e37156f174fc2d562853568b1.jpg';
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           //src += '.jpg';
