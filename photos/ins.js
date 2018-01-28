@@ -117,8 +117,8 @@
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
           //改成自己
-          var minSrc = 'https://github.com/maker997/backupBlog/tree/master/min_photos/' + data.link[i];
-          var src = 'https://github.com/maker997/backupBlog/tree/master/photos/' + data.link[i];
+          var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/min_photos/' + data.link[i];
+          var src = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
