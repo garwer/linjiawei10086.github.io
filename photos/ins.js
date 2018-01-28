@@ -117,8 +117,14 @@
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
           //改成自己
-          var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/min_photos/' + data.link[i];
-          var src = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/photos/' + data.link[i];
+          console.log('data==>>>>>>>>>',data);
+        //  var minSrc = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/min_photos/' + data.link[i];
+        //  var src = 'https://github.com/linjiawei10086/my-blog-photo/tree/master/photos/' + data.link[i];
+          var minSrc = 'http://7xtc4k.com1.z0.glb.clouddn.com/min_photos/' + data.link[i];
+          var src = 'http://7xtc4k.com1.z0.glb.clouddn.com/photos/' + data.link[i];
+
+          console.log(minSrc);
+          console.log(src);
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
